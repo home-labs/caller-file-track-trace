@@ -11,7 +11,7 @@
     "strict": true,
     "declaration": true,
     "declarationMap": true,
-    "outDir": "dist/@actjs.on/module-tracker",
+    "outDir": "dist/@actjs.on/module-track-trace",
     "moduleResolution": "node",
     "rootDir": "./",
     "sourceMap": true

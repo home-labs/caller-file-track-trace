@@ -1,9 +1,7 @@
 import { ModuleTrackTrace } from '../index.js';
 
-import { Test2 } from './test2.js';
 
-
-export class Test1 {
+export class Test3 {
 
     private myselfIdentifier: string;
 
@@ -13,10 +11,6 @@ export class Test1 {
         const fileTracker: ModuleTrackTrace = new ModuleTrackTrace();
 
         console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getAbsolutePathOfFileCaller());
-
-        new Test2();
     }
 
 }
-
-new Test1();
