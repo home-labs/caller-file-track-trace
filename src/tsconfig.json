@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "resolveJsonModule": false,
+    "rootDir": "./",
+    "module": "ESNext",
+    "target": "ES2020",
+    "lib": [
+      // "ES6",
+    ]
+  }
+  , "include": [
+    "index.ts",
+    "lib/**/*",
+    "test/**/*"
+  ]
+}
