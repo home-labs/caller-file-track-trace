@@ -29,9 +29,10 @@ export class Test2 {
 
         const relativeModulePath: string = path.relative(process.cwd(), fileCallerDirectory);
 
-        const resolvedPath = `${relativeRootPath}/${relativeModulePath}`.replace(/\\/g, '/');
+        // ainda tem que pegar o path com o nome do arquivo que o usuário informou para o método de importação, pra resolver e juntar com relativeDirectory
+        const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`.replace(/\\/g, '/');
 
-        console.log(resolvedPath)
+        console.log(relativeDirectory)
     }
 
 }
