@@ -12,7 +12,7 @@ export class Test1 {
 
         const fileTracker: ModuleTrackTrace = new ModuleTrackTrace();
 
-        console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getAbsolutePathOfFileCaller());
+        console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getFileCallerURL());
 
         new Test2();
     }

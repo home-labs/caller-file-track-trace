@@ -14,7 +14,7 @@ export class ModuleTrackTrace {
         this.resolveData();
     }
 
-    getAbsolutePathOfFileCaller(): string {
+    getFileCallerURL(): string {
         return this.filePath;
     }
 
@@ -22,7 +22,7 @@ export class ModuleTrackTrace {
 
         const data: string = this.stack[3];
 
-        const filePathPattern: RegExp = new RegExp(`file:\/{2}(.+[^:0-9]):{1}[0-9]+:{1}[0-9]+`);
+        const filePathPattern: RegExp = new RegExp(`(file:\/{2}.+[^:0-9]):{1}[0-9]+:{1}[0-9]+`);
 
         const result: RegExpExecArray = filePathPattern.exec(data) as RegExpExecArray;
 

@@ -10,7 +10,7 @@ export class Test3 {
 
         const fileTracker: ModuleTrackTrace = new ModuleTrackTrace();
 
-        console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getAbsolutePathOfFileCaller());
+        console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getFileCallerURL());
     }
 
 }

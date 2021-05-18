@@ -16,41 +16,23 @@ export class Test2 {
 
         const fileTracker: ModuleTrackTrace = new ModuleTrackTrace();
 
-        console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getAbsolutePathOfFileCaller());
+        const fileCallerURL: string = fileTracker.getFileCallerURL();
+
+        console.log(`\nWho called ${this.myselfIdentifier}: `, fileCallerURL);
 
         new Test3();
 
-        const urlObject: URL = new URL(import.meta.url);
-
-        const currentPathname: string = urlObject.pathname
-
         const currentDirectory: string = path.dirname(url.fileURLToPath(import.meta.url));
 
-        const currentRelativeRootPath = path
-        .relative(url.fileURLToPath(import.meta.url), process.cwd());
-            // .relative(url.fileURLToPath(path.dirname(import.meta.url)), process.cwd());
+        const fileCallerDirectory: string = path.dirname(url.fileURLToPath(fileCallerURL));
 
-        // console.log(`\n${process.cwd()}`);
+        const relativeRootPath = path.relative(currentDirectory, process.cwd());
 
-        // console.log(`\n${currentPathname}`);
+        const relativeModulePath: string = path.relative(process.cwd(), fileCallerDirectory);
 
-        // console.log(`\n` + path.dirname(import.meta.url))
+        console.log(`${relativeRootPath}\\${relativeModulePath}`)
 
-        // console.log(import.meta.url)
-        // console.log(url.fileURLToPath(import.meta.url))
-        console.log(process.cwd())
-        console.log(currentDirectory)
-
-        // console.log(path.relative(path.dirname(url.fileURLToPath(import.meta.url)), process.cwd()))
-
-        // será usado também
-        console.log(path.relative(process.cwd(), currentDirectory))
-
-        // a partir do anterior pode-se fazer um .split(path.sep) e, pela quantidade de itens do array, pode-se fazer `..${path.sep}` para cada iteração para formar o path relativo, já que o relative não está funcionando adequadamente quando o segundo é menor que o primeiro
-        console.log(path.sep)
-
-
-        // console.log(currentRelativeRootPath)
+        // agora basta juntar relativeRootPath com relativeModulePath, no entanto estará com barra invertiva, logo é necessário ver com resolver isso para fazer o import adequadamente
 
     }
 
