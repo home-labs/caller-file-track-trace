@@ -32,7 +32,7 @@ export class Test2 {
         // ainda tem que pegar o path com o nome do arquivo que o usuário informou para o método de importação, pra resolver e juntar com relativeDirectory
         const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`.replace(/\\/g, '/');
 
-        console.log(relativeDirectory)
+        // console.log(relativeDirectory)
     }
 
 }
