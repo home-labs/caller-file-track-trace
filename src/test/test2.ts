@@ -24,6 +24,8 @@ export class Test2 {
 
         const currentPathname: string = urlObject.pathname
 
+        const currentDirectory: string = path.dirname(url.fileURLToPath(import.meta.url));
+
         const currentRelativeRootPath = path
         .relative(url.fileURLToPath(import.meta.url), process.cwd());
             // .relative(url.fileURLToPath(path.dirname(import.meta.url)), process.cwd());
@@ -37,12 +39,16 @@ export class Test2 {
         // console.log(import.meta.url)
         // console.log(url.fileURLToPath(import.meta.url))
         console.log(process.cwd())
-        console.log(path.dirname(url.fileURLToPath(import.meta.url)))
+        console.log(currentDirectory)
 
         // console.log(path.relative(path.dirname(url.fileURLToPath(import.meta.url)), process.cwd()))
 
         // será usado também
-        console.log(path.relative(process.cwd(), path.dirname(url.fileURLToPath(import.meta.url))))
+        console.log(path.relative(process.cwd(), currentDirectory))
+
+        // a partir do anterior pode-se fazer um .split(path.sep) e, pela quantidade de itens do array, pode-se fazer `..${path.sep}` para cada iteração para formar o path relativo, já que o relative não está funcionando adequadamente quando o segundo é menor que o primeiro
+        console.log(path.sep)
+
 
         // console.log(currentRelativeRootPath)
 
