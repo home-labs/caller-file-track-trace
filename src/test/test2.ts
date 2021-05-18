@@ -2,7 +2,6 @@ import { ModuleTrackTrace } from '../index.js';
 
 import { Test3 } from './test3.js';
 
-import { URL } from "url";
 import url from "url";
 import path from "path";
 
@@ -30,10 +29,9 @@ export class Test2 {
 
         const relativeModulePath: string = path.relative(process.cwd(), fileCallerDirectory);
 
-        console.log(`${relativeRootPath}\\${relativeModulePath}`)
+        const resolvedPath = `${relativeRootPath}/${relativeModulePath}`.replace(/\\/g, '/');
 
-        // agora basta juntar relativeRootPath com relativeModulePath, no entanto estará com barra invertiva, logo é necessário ver com resolver isso para fazer o import adequadamente
-
+        console.log(resolvedPath)
     }
 
 }
