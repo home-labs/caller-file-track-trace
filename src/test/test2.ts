@@ -31,9 +31,9 @@ export class Test2 {
 
         // ainda tem que pegar o path com o nome do arquivo que o usuário informou como parâmetro para o método de importação e juntar com relativeDirectory adicionando a / antes
         const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`
-            .replace(/\\/g, '/')
-            .replace(/(\/){2,}/g, '/')
-            .replace(/[^.](\.\/)+/, '/');
+            .replace(/(?:\\)/g, '/')
+            .replace(/(?:\/){2,}/g, '/')
+            .replace(/(?<=\b|\/)(?:\.\/)+/g, '/');
     }
 
 }
