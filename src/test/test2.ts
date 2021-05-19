@@ -29,10 +29,11 @@ export class Test2 {
 
         const relativeModulePath: string = path.relative(process.cwd(), fileCallerDirectory);
 
-        // ainda tem que pegar o path com o nome do arquivo que o usuário informou para o método de importação, pra resolver e juntar com relativeDirectory adicionando a / + o que o usuário enviou resolvido em es-global-module-resolver
-        const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`.replace(/\\/g, '/');
-
-        // console.log(relativeDirectory)
+        // ainda tem que pegar o path com o nome do arquivo que o usuário informou como parâmetro para o método de importação e juntar com relativeDirectory adicionando a / antes
+        const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`
+            .replace(/\\/g, '/')
+            .replace(/(\/){2,}/g, '/')
+            .replace(/[^.](\.\/)+/, '/');
     }
 
 }
