@@ -29,11 +29,18 @@ export class Test2 {
 
         const relativeModulePath: string = path.relative(process.cwd(), fileCallerDirectory);
 
-        // ainda tem que pegar o path com o nome do arquivo que o usuário informou como parâmetro para o método de importação e juntar com relativeDirectory adicionando a / antes
-        const relativeDirectory = `${relativeRootPath}/${relativeModulePath}`
+        // ainda tem que pegar o path com o nome do arquivo que o usuário informou como parâmetro para o método de importação e juntar com relativeDirectory adicionando / antes
+
+        console.log(`${ relativeRootPath }/${relativeModulePath}`)
+
+        const relativeDirectory = `././${relativeRootPath}./${relativeModulePath}`
             .replace(/(?:\\)/g, '/')
             .replace(/(?:\/){2,}/g, '/')
-            .replace(/(?<=\b|\/)(?:\.\/)+/g, '/');
+            .replace(/(?:\.{3,}\/)+/g, '../')
+            .replace(/(?:\.\/){2,}/, './')
+            .replace(/(?<=\b)(?:\.\/)+/g, '/');
+
+        console.log(relativeDirectory);
     }
 
 }
