@@ -1,4 +1,4 @@
-import { ModuleTrackTrace } from '../index.js';
+import { CallerFileTrackTrace } from '../index.js';
 
 import { Test2 } from './test2.js';
 
@@ -10,7 +10,7 @@ export class Test1 {
     constructor() {
         this.myselfIdentifier = this.constructor.name;
 
-        const fileTracker: ModuleTrackTrace = new ModuleTrackTrace();
+        const fileTracker: CallerFileTrackTrace = new CallerFileTrackTrace();
 
         console.log(`\nWho called ${this.myselfIdentifier}: `, fileTracker.getFileCallerURL());
 

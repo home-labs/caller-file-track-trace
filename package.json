@@ -1,5 +1,5 @@
 {
-  "name": "@actjs.on/module-track-trace",
+  "name": "@actjs.on/caller-file-track-trace",
   "version": "1.0.0-rc.2",
   "type": "module",
   "devDependencies": {

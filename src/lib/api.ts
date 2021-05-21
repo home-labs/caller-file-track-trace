@@ -1,4 +1,4 @@
-export class ModuleTrackTrace {
+export class CallerFileTrackTrace {
 
     private stack: string[];
 
