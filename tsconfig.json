@@ -1,26 +1,14 @@
 {
-  // to build, run: $ tsc -w on root path of the tsconfig.json
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    // genereted by $ tsc init
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "ES2020",
-    "resolveJsonModule": true,
-    "target": "ES2015",
-    "skipLibCheck": true,
-    "strict": true,
-    "declaration": true,
-    "declarationMap": true,
-    "outDir": "dist/@actjs.on/caller-file-track-trace",
-    "moduleResolution": "node",
-    "rootDir": "./",
-    "sourceMap": true
-  }
-  , "include": [
-    "package.json",
-    ".npmignore"
-  ]
-  , "references": [
-    {"path": "./src"}
+    "outDir": "dist/@actjs.on/caller-file-track-trace"
+  },
+  "references": [
+    {
+      "path": "./src"
+    }
+  ],
+  "include": [
+    "package.json"
   ]
 }
